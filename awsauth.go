@@ -202,6 +202,7 @@ var (
 		"elastictranscoder":    4,
 		"elasticache":          2,
 		"es":                   4,
+		"execute-api":          4,
 		"glacier":              4,
 		"kinesis":              4,
 		"redshift":             4,
