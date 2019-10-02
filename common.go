@@ -35,7 +35,9 @@ func serviceAndRegion(host string) (service string, region string) {
 
 	parts := strings.Split(host, ".")
 	if !strings.Contains(host, "amazonaws.com") {
-		region = os.Getenv(envRegion)
+		if os.Getenv(envRegion) != "" {
+			region = os.Getenv(envRegion)
+		}
 		service = "execute-api"
 	} else if len(parts) == 4 {
 		// Either service.region.amazonaws.com or virtual-host.region.amazonaws.com
